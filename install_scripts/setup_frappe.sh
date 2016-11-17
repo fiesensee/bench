@@ -394,10 +394,10 @@ install_bench() {
 setup_bench() {
 	echo Installing frappe-bench
 	FRAPPE_BRANCH="develop"
-	ERPNEXT_APPS_JSON="https://raw.githubusercontent.com/frappe/bench/master/install_scripts/erpnext-apps.json"
+	ERPNEXT_APPS_JSON="https://raw.githubusercontent.com/fiesensee/bench/master/install_scripts/erpnext-apps.json"
 	if $SETUP_PROD; then
 		FRAPPE_BRANCH="master"
-		ERPNEXT_APPS_JSON="https://raw.githubusercontent.com/frappe/bench/master/install_scripts/erpnext-apps-master.json"
+		ERPNEXT_APPS_JSON="https://raw.githubusercontent.com/fiesensee/bench/master/install_scripts/erpnext-apps-master.json"
 	fi
 
 	run_cmd sudo su $FRAPPE_USER -c "cd /home/$FRAPPE_USER && bench init frappe-bench --frappe-branch $FRAPPE_BRANCH --apps_path $ERPNEXT_APPS_JSON"
